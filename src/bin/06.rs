@@ -88,7 +88,7 @@ pub fn part_two(input: &str) -> Option<u32> {
     }
 
     // Closure to determine whether adding a block at `block` causes a loop
-    let mut causes_loop = |block: Pos| -> bool {
+    let causes_loop = |block: Pos| -> bool {
         if tiles.contains(&block) || block == start { return false; }
         let mut pos = start;
         let mut dir = start_dir;
