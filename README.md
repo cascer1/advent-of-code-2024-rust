@@ -22,14 +22,14 @@ Solutions for [Advent of Code](https://adventofcode.com/) in [Rust](https://www.
 
 | Day | Part 1 | Part 2 |
 | :---: | :---: | :---:  |
-| [Day 1](./src/bin/01.rs) | `78.7µs` | `113.2µs` |
-| [Day 2](./src/bin/02.rs) | `197.3µs` | `379.9µs` |
-| [Day 3](./src/bin/03.rs) | `260.8µs` | `337.0µs` |
-| [Day 4](./src/bin/04.rs) | `992.1µs` | `171.4µs` |
-| [Day 5](./src/bin/05.rs) | `538.3µs` | `1.2ms` |
-| [Day 6](./src/bin/06.rs) | `322.6µs` | `1.1s` |
+| [Day 1](./src/bin/01.rs) | `35.4µs` | `64.0µs` |
+| [Day 2](./src/bin/02.rs) | `67.6µs` | `107.0µs` |
+| [Day 3](./src/bin/03.rs) | `125.8µs` | `179.9µs` |
+| [Day 4](./src/bin/04.rs) | `320.4µs` | `55.0µs` |
+| [Day 5](./src/bin/05.rs) | `334.5µs` | `688.5µs` |
+| [Day 6](./src/bin/06.rs) | `244.3µs` | `803.1ms` |
 
-**Total: 1104.59ms**
+**Total: 805.32ms**
 <!--- benchmarking table --->
 
 ---
