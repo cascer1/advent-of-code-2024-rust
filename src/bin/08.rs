@@ -34,7 +34,63 @@ pub fn part_one(input: &str) -> Option<u32> {
 }
 
 pub fn part_two(input: &str) -> Option<u32> {
-    None
+    let (map, width, height) = parse_input(input);
+    let mut antinodes: HashSet<(i32, i32)> = HashSet::new();
+
+    for (_, antennae) in map.iter() {
+        antinodes.extend(antennae);
+        for permutation in antennae.iter().permutations(2) {
+            let first = permutation[0];
+            let second = permutation[1];
+
+            let dx = second.0 - first.0;
+            let dy = second.1 - first.1;
+
+            // Continue iterating over dy/dx until outside the map, both increasing and decreasing
+            let mut outside = false;
+            let mut i = 0;
+
+            while !outside {
+                let nx_positive = first.0 + dx * i;
+                let ny_positive = first.1 + dy * i;
+
+                let nx_negative = first.0 - dx * i;
+                let ny_negative = first.1 - dy * i;
+
+                let mut positive_inserted = false;
+                let mut negative_inserted = false;
+
+                if nx_positive < width && nx_positive >= 0 && ny_positive < height && ny_positive >= 0 {
+                    antinodes.insert((nx_positive, ny_positive));
+                    positive_inserted = true;
+                }
+
+                if nx_negative < width && nx_negative >= 0 && ny_negative < height && ny_negative >= 0 {
+                    antinodes.insert((nx_negative, ny_negative));
+                    negative_inserted = true;
+                }
+
+                if !positive_inserted && !negative_inserted {
+                    outside = true;
+                }
+
+                i += 1;
+            }
+        }
+    }
+
+    for y in 0..height {
+        for x in 0..width {
+            if antinodes.contains(&(x, y)) {
+                print!("#")
+            } else { print!(".") }
+        }
+        println!();
+    }
+
+    println!("{} unique frequencies", map.keys().count());
+
+    Some(antinodes.len() as u32)
 }
 
 fn parse_input(input: &str) -> (HashMap<char, Vec<(i32, i32)>>, i32, i32) {
@@ -66,13 +122,19 @@ mod tests {
     fn test_part_one() {
         let result = part_one(&advent_of_code::template::read_file("examples", DAY));
         assert_eq!(result, Some(14));
-        // 262 too low
-        // 303 too high
     }
 
     #[test]
     fn test_part_two() {
         let result = part_two(&advent_of_code::template::read_file("examples", DAY));
-        assert_eq!(result, None);
+        assert_eq!(result, Some(34));
+        // 1003 too high
+        // 961 too low
+    }
+
+    #[test]
+    fn test_part_two_second() {
+        let result = part_two(&advent_of_code::template::read_file_part("examples", DAY, 2));
+        assert_eq!(result, Some(9))
     }
 }
