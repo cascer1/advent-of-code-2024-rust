@@ -16,7 +16,7 @@ Solutions for [Advent of Code](https://adventofcode.com/) in [Rust](https://www.
 |  [Day 6](https://adventofcode.com/2024/day/6)  |   ⭐    |   ⭐    |
 |  [Day 7](https://adventofcode.com/2024/day/7)  |   ⭐    |   ⭐    |
 |  [Day 8](https://adventofcode.com/2024/day/8)  |   ⭐    |   ⭐    |
-|  [Day 9](https://adventofcode.com/2024/day/9)  |        |        |
+|  [Day 9](https://adventofcode.com/2024/day/9)  |   ⭐    |   ⭐    |
 | [Day 10](https://adventofcode.com/2024/day/10) |        |        |
 | [Day 11](https://adventofcode.com/2024/day/11) |        |        |
 | [Day 12](https://adventofcode.com/2024/day/12) |        |        |
@@ -47,7 +47,8 @@ Solutions for [Advent of Code](https://adventofcode.com/) in [Rust](https://www.
 | [Day 5](./src/bin/05.rs) | `538.3µs` |  `1.2ms`  |
 | [Day 6](./src/bin/06.rs) | `322.6µs` |  `1.1s`   |
 | [Day 7](./src/bin/07.rs) | `18.3ms`  |  `3.9s`   |
-| [Day 8](./src/bin/08.rs) | `42.6µs`  |    `-`    |
+| [Day 8](./src/bin/08.rs) | `42.6µs`  | `97.0µs`  |
+| [Day 9](./src/bin/09.rs) | `465.8µs` | `72.7ms`  |
 
 **Total: 5022.93ms**
 <!--- benchmarking table --->

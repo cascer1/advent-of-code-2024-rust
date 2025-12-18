@@ -79,17 +79,6 @@ pub fn part_two(input: &str) -> Option<u32> {
         }
     }
 
-    for y in 0..height {
-        for x in 0..width {
-            if antinodes.contains(&(x, y)) {
-                print!("#")
-            } else { print!(".") }
-        }
-        println!();
-    }
-
-    println!("{} unique frequencies", map.keys().count());
-
     Some(antinodes.len() as u32)
 }
 
